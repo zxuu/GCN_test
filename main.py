@@ -64,7 +64,7 @@ def train_GCN(data):
     # print(f'acc:%.4f, loss:%.4f' % (sum(un_mask)/len(un_mask), loss))
     loss.backward()
     optimizer_gcn.step()
-    return sum(un_mask)/len(un_mask), loss
+    return sum(un_mask)/len(un_mask), loss    # acc, loss
 
 model_mlp = MLP()
 print(model_mlp)
@@ -85,7 +85,7 @@ def train_MLP(data):
     # print(f'acc:%.4f, loss:%.4f' % (sum(un_mask)/len(un_mask), loss))
     loss.backward()
     optimizer_mlp.step()
-    return sum(un_mask)/len(un_mask), loss
+    return sum(un_mask)/len(un_mask), loss    # acc, loss
 
 for epoch in range(100):
     acc1, loss1 = train_GCN(data=dataset)
